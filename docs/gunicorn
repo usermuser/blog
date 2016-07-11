@@ -1,0 +1,11 @@
+#to start new gunicorn process type
+sudo start <process name>
+#for example to start new gunicorn instance with name /etc/init/gunicorn_blog.conf type
+sudo start gunicorn_blog
+
+#steps to deploy with django+gunicorn+nginx
+#step 1: configure gunicorn (create gunicorn_projectname.conf file in /etc/init/ folder)
+#step 2: configure nginx (create projectname_nginx.conf file in /etc/nginx/sites-available and
+#create simlink in /etc/nginx/sites-enabled to that file) 
+#step3: test nginx with command sudo nginx -t or smthng like that and restart nginx
+#step4: start gunicorn with "sudo start gunicorn_processname" command

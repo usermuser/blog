@@ -115,3 +115,9 @@ EMAIL_HOST_PASSWORD = 'SMDlwrd2'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+#### http://vivazzi.ru/blog/92/
+#### http://m05quit0.ru/dev/nastrojka-django-dlya-otpravki-pochty-s-mail-ru/
+
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+

@@ -110,8 +110,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_HOST_USER = 'xakacb4@mail.ru'
-EMAIL_HOST_PASSWORD = '1qaz2wsx'
+EMAIL_HOST_USER = 'EMAIL'
+EMAIL_HOST_PASSWORD = 'Password'
 EMAIL_PORT = 2525
 EMAIL_USE_TLS = True
 

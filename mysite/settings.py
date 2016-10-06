@@ -109,3 +109,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'lwrdrstv@gmail.com'
+EMAIL_HOST_PASSWORD = 'SMDlwrd2'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+

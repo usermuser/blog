@@ -23,13 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'qp4ul679cyi^4hyc#*j&lt4!l$d)w$bj+dg!67t6sk$@jnp%7j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True 
+DEBUG = False 
 
-ALLOWED_HOSTS = [
-        'www.nortrom.ru',
-        'nortrom.ru',
-]
-
+#ALLOWED_HOSTS = [
+#        'www.nortrom.ru',
+#        'nortrom.ru',
+#]
+ALLOWED_HOSTS = ['0.0.0.0','92.43.187.233',]
 
 # Application definition
 

@@ -20,6 +20,7 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls',
                            namespace='blog',
                            app_name='blog')),
-    url(r'^admin/', include(admin.site.urls)),
+#    url(r'^admin/', include(admin.site.urls)),
+    url(r'^zz/', include(admin.site.urls)),
     
 ]

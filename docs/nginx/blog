@@ -1,0 +1,49 @@
+#server {
+#    server_name 92.43.187.233;
+#
+#    access_log off;
+#
+#    location /static/ {
+#        alias /home/bluser/blog/static/;
+#    }
+#
+#    location / {
+#        proxy_pass http://127.0.0.1:8001;
+#        proxy_set_header X-Forwarded-Host $server_name;
+#        proxy_set_header X-Real-IP $remote_addr;
+#        add_header P3P 'CP="ALL DSP COR PSAa PSDa OUR NOR ONL UNI COM NAV"';
+#    }
+#}
+upstream app_server {
+    server unix:/home/bluser/run/gunicorn.sock fail_timeout=0;
+}
+
+server {
+    listen 80;
+
+    # add here the ip address of your server
+    # or a domain pointing to that ip (like example.com or www.example.com)
+    server_name 94.43.187.233;
+
+    keepalive_timeout 5;
+    client_max_body_size 4G;
+
+    access_log /home/bluser/logs/nginx-access.log;
+    error_log /home/bluser/logs/nginx-error.log;
+
+    location /static/ {
+        alias /home/bluser/blog/static/;
+    }
+
+    # checks for static file, if not found proxy to app
+    location / {
+        try_files $uri @proxy_to_app;
+    }
+
+    location @proxy_to_app {
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header Host $http_host;
+      proxy_redirect off;
+      proxy_pass http://app_server;
+    }
+}

@@ -24,6 +24,11 @@ urlpatterns = [
     url(r'^rblog/', include('blog.urls',
                            namespace='blog',
                            app_name='blog')),
+
+    url(r'^tblog/', include('blog.urls',
+                           namespace='blog',
+                           app_name='blog')),
+
 #    url(r'^admin/', include(admin.site.urls)),
     url(r'^zz/', include(admin.site.urls)),
     

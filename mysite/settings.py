@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'qp4ul679cyi^4hyc#*j&lt4!l$d)w$bj+dg!67t6sk$@jnp%7j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = True 
 
 #ALLOWED_HOSTS = [
 #        'www.nortrom.ru',
@@ -41,7 +41,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'tblog',
 )
 
 MIDDLEWARE_CLASSES = (

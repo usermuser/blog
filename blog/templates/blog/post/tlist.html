@@ -1,6 +1,6 @@
 {% extends "blog/base.html" %}
 
-{% block title %}TLIT{% endblock %}
+{% block title %}TIMOFEY{% endblock %}
 
 {% block content %}
   <h1>My blog </h1>
@@ -15,5 +15,5 @@
     </p>
     {{ post.body|truncatewords:30|linebreaks }}
   {% endfor %}
-    {% include "pagination.html" with page=page_obj %}
+<!--    {% include "pagination.html" with page=page_obj %}-->
 {% endblock %}

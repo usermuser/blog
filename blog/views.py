@@ -10,7 +10,7 @@ class PostListView(ListView):
     queryset = Post.published.all()
     context_object_name = 'posts'
     paginate_by = 3
-    template_name = 'blog/post/list.html'
+    template_name = 'blog/post/tlist.html'
 
 def post_list(request):
     object_list = Post.published.all()
@@ -30,7 +30,7 @@ def post_list(request):
                   'posts': posts})
 
 def timofey_post_list(request):
-    object_list = Post.published.filter(author_id=2)
+    posts= Post.published.filter(author_id=2)
     #paginator = Paginator(object_list, 3) # 3 posts in each page
     #page = request.GET.get('page')
     #try:
@@ -41,10 +41,9 @@ def timofey_post_list(request):
     #except EmptyPage:
         # If page is out of range deliver last page of results
         #posts = paginator.page(paginator.num_pages)
+#                  """{'page': page,"""
     return render(request,
-                  'blog/post/tlist.html',
-                  {'page': page,
-                  'posts': posts})
+                  'blog/post/tlist.html',{'posts': posts})
 
 def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post, slug=post,

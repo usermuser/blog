@@ -7,6 +7,9 @@ from .forms import EmailPostForm, CommentForm
 from django.core.mail import send_mail
 
 class PostListView(ListView):
+    ''' Class based view which takes all posts from db
+    now it is not used since we have functions to
+    retrieve posts filtered by user_id '''
     #queryset = Post.published.all()
     queryset = Post.published.filter(author_id=3)
     context_object_name = 'posts'
@@ -14,6 +17,7 @@ class PostListView(ListView):
     template_name = 'blog/post/tlist.html'
 
 def rustam_post_list(request):
+    '''Invokes data filtered by author_id(3=Rustam) '''
     object_list = Post.published.filter(author_id=3)
     #object_list = Post.published.all()
     paginator = Paginator(object_list, 10) # 10 posts in each page
@@ -32,6 +36,7 @@ def rustam_post_list(request):
                   'posts': posts})
 
 def timofey_post_list(request):
+    '''Invokes data filtered by author_id(4=Timofey) '''
     posts= Post.published.filter(author_id=4)
     #paginator = Paginator(object_list, 3) # 3 posts in each page
     #page = request.GET.get('page')
@@ -43,7 +48,7 @@ def timofey_post_list(request):
     #except EmptyPage:
         # If page is out of range deliver last page of results
         #posts = paginator.page(paginator.num_pages)
-#                  """{'page': page,"""
+#this text was in string 53 """{'page': page,"""
     return render(request,
                   'blog/post/tlist.html',{'posts': posts})
 

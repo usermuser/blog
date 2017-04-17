@@ -7,6 +7,7 @@ urlpatterns = [
     # ex: /blog/timofey/
     #url(r'^timofey/$', views.PostListView.as_view(), name='timofey_post_list'), 
     url(r'^timofey/$', views.timofey_post_list, name='timofey_post_list'), 
+    url(r'^rustam/$', views.rustam_post_list, name='rustam_post_list'), 
     url(r'^(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})/'\
         r'(?P<post>[-\w]+)/$',
         views.post_detail,

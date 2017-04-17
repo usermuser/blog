@@ -29,7 +29,7 @@ DEBUG = True
 #        'www.nortrom.ru',
 #        'nortrom.ru',
 #]
-ALLOWED_HOSTS = ['0.0.0.0','92.43.187.233',]
+ALLOWED_HOSTS = ['0.0.0.0','92.43.187.233','192.168.0.3']
 
 # Application definition
 

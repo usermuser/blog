@@ -10,7 +10,7 @@ class PostListView(ListView):
     queryset = Post.published.all()
     context_object_name = 'posts'
     paginate_by = 3
-    template_name = 'blog/post/list.html'
+    template_name = 'blog_app/post/list.html'
 
 def post_list(request):
     object_list = Post.published.all()
@@ -25,7 +25,7 @@ def post_list(request):
         # If page is out of range deliver last page of results
         posts = paginator.page(paginator.num_pages)
     return render(request,
-                  'blog/post/list.html',
+                  'blog_app/post/list.html',
                   {'page': page,
                   'posts': posts})
 
@@ -51,7 +51,7 @@ def post_detail(request, year, month, day, post):
     else:
         comment_form = CommentForm()
     return render(request,
-                    'blog/post/detail.html',
+                    'blog_app/post/detail.html',
                     {'post': post,
                     'comments': comments,
                     'comment_form': comment_form})
@@ -77,6 +77,6 @@ def post_share(request, post_id):
             sent = True
     else:
         form = EmailPostForm()
-    return render(request, 'blog/post/share.html', {'post': post,
+    return render(request, 'blog_app/post/share.html', {'post': post,
                                                     'form': form,
                                                     'sent': sent})

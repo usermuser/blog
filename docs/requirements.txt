@@ -1,5 +1,4 @@
-chardet==2.3.0
-Django==1.8.15
-django-csvimport==2.4 #delete
-Pillow==3.1.1
-pytz==2016.7
+chardet==3.0.4
+Django==1.8.17
+Pillow==5.3.0
+pytz==2018.7

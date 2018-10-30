@@ -1,3 +1,5 @@
 #this string will be ignored
 *.pyc
 .idea/
+db.sqlite3
+blog_app/migrations/

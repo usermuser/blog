@@ -1,0 +1,26 @@
+#!/bin/bash
+
+NAME="blog"
+DIR=/home/bluser/blog
+USER=bluser
+GROUP=bluser
+WORKERS=2
+BIND=unix:/home/bluser/run/gunicorn.sock
+DJANGO_SETTINGS_MODULE=mysite.settings
+DJANGO_WSGI_MODULE=mysite.wsgi
+LOG_LEVEL=error
+
+cd $DIR
+source /home/bluser/envdj18/bin/activate
+
+export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
+export PYTHONPATH=$DIR:$PYTHONPATH
+
+exec /home/bluser/envdj18/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
+  --name $NAME \
+  --workers $WORKERS \
+  --user=$USER \
+  --group=$GROUP \
+  --bind=$BIND \
+  --log-level=$LOG_LEVEL \
+  --log-file=-

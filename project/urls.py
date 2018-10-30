@@ -20,7 +20,5 @@ urlpatterns = [
     url(r'^blog/', include('blog_app.urls',
                            namespace='blog_app',
                            app_name='blog_app')),
-#    url(r'^admin/', include(admin.site.urls)),
     url(r'^zz/', include(admin.site.urls)),
-    
 ]

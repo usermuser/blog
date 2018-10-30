@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'qp4ul679cyi^4hyc#*j&lt4!l$d)w$bj+dg!67t6sk$@jnp%7j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = True
 
 #ALLOWED_HOSTS = [
 #        'www.nortrom.ru',
@@ -121,3 +121,8 @@ EMAIL_USE_TLS = True
 SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
+if DEBUG == True:
+    ALLOWED_HOSTS = ['127.0.0.1']
+    print('[***] DEBUG is TRUE! [***]')
+else:
+    print('[***] DEBUG is FALSE! [***]')
